@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your go-to resource for physical, mental, and emotional health.">
+    <meta name="keywords" content="health, wellness, physical health, mental health, emotional health">
+    <meta property="og:title" content="Health Hub">
+    <meta property="og:description" content="Your go-to resource for physical, mental, and emotional health.">
+    <meta property="og:image" content="https://static.toiimg.com/photo/97420059.cms">
+    <title>Health Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #007BFF; /* Header background color */
+            color: #fff; /* Header text color */
+            padding: 15px 20px; /* Padding inside header */
+            display: flex; /* Flexbox for layout */
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center; /* Center items vertically */
+            position: sticky; /* Sticky header */
+            top: 0; /* Stick to top */
+            z-index: 1000; /* On top of other elements */
+        }
+
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Flexbox for horizontal layout */
+        }
+
+        nav ul li {
+            margin: 0 20px; /* Margin between items */
+            position: relative; /* Relative positioning for dropdown */
+        }
+
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Bold text */
+            padding: 10px 15px; /* Padding around links */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Transition effects */
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3; /* Background color on hover */
+            color: #FFD700; /* Text color on hover */
+        }
+
+        button {
+            background-color: #28a745; /* Green button color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            padding: 10px 15px; /* Padding inside button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        #hero {
+            background: url('https://static.toiimg.com/photo/97420059.cms') no-repeat center center; /* Hero background image */
+            background-size: cover; /* Cover background */
+            color: #fff; /* Text color */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Flexbox layout */
+            flex-direction: column; /* Column layout */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: bottom; /* Center text */
+            padding: 0; /* No padding */
+        }
+
+        main {
+            padding: 20px; /* Padding around main content */
+        }
+
+        h2 {
+            text-align: center; /* Center align headings */
+            margin-bottom: 20px; /* Bottom margin */
+            color: #007BFF; /* Heading color */
+        }
+
+        .resource-grid {
+            display: flex; /* Flexbox layout */
+            justify-content: space-around; /* Space between items */
+            flex-wrap: wrap; /* Wrap to next line if needed */
+        }
+
+        .resource {
+            background: white; /* White background for resources */
+            margin: 10px; /* Margin around resources */
+            padding: 15px; /* Padding inside resource */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            flex: 1 1 200px; /* Flexible item size */
+        }
+
+        #testimonials {
+            background: linear-gradient(to bottom right, #ffcccc, #cceeff); /* Gradient background */
+            padding: 40px; /* Padding inside testimonials */
+            border-radius: 10px; /* Rounded corners */
+            margin-top: 20px; /* Margin from top */
+        }
+
+        .testimonial-grid {
+            display: flex; /* Flexbox layout */
+            justify-content: space-around; /* Space between testimonials */
+            flex-wrap: wrap; /* Wrap if necessary */
+        }
+
+        .testimonial {
+            margin: 20px; /* Margin around testimonials */
+            padding: 20px; /* Padding inside testimonials */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            flex: 1 1 30%; /* Flex item size */
+            transition: transform 0.3s; /* Smooth transition for hover */
+            text-align: center; /* Center-align text */
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .testimonial img {
+            border-radius: 50%; /* Circular images */
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height */
+            margin-bottom: 10px; /* Space below image */
+        }
+
+        .star-rating {
+            color: #FFD700; /* Gold color for stars */
+            font-size: 1.2em; /* Size of the stars */
+        }
+
+        .testimonial-content {
+            padding: 10px; /* Padding inside testimonial content */
+        }
+
+        .zigzag-section {
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center content */
+            flex-wrap: wrap; /* Wrap items */
+            margin-top: 40px; /* Space above sections */
+        }
+
+        .about,
+        .contact {
+            background: #fff; /* White background for sections */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            padding: 20px; /* Padding inside sections */
+            margin: 10px; /* Margin around sections */
+            flex: 0 0 45%; /* Fixed width for sections */
+            transition: transform 0.3s; /* Smooth transition for hover */
+        }
+
+        .about:hover,
+        .contact:hover {
+            transform: scale(1.02); /* Slight zoom on hover */
+        }
+
+        .about {
+            margin-right: 20px; /* Space between sections */
+        }
+
+        .contact {
+            margin-left: 20px; /* Space between sections */
+        }
+
+        footer {
+            background: #007BFF; /* Footer background color */
+            color: white; /* Footer text color */
+            text-align: center; /* Center text */
+            padding: 20px; /* Padding inside footer */
+            position: relative; /* Positioning context for footer */
+            bottom: 0; /* Stick to bottom */
+            width: 100%; /* Full width */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .zigzag-section {
+                flex-direction: column; /* Stack sections vertically */
+                align-items: center; /* Center align items */
+            }
+
+            .about,
+            .contact {
+                flex: 0 0 90%; /* Make sections take more width */
+                margin: 10px 0; /* Margin on top and bottom */
+            }
+
+            .testimonial {
+                flex: 1 1 100%; /* Make testimonials full width on small screens */
+            }
+
+            .resource {
+                flex: 1 1 100%; /* Make resources full width on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Health Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                
+                <li><a href="#about">About Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Welcome to Health Hub</h2>
+        <p>Your go-to resource for physical, mental, and emotional health.</p>
+        <button onclick="scrollToSection('resources')">Get Started</button>
+    </section>
+
+    <main>
+        <h2 id="resources">Resources</h2>
+        <div class="resource-grid">
+            <div class="resource">
+                <h3>Physical Health</h3>
+                <p>Find resources and articles to improve your physical health.</p>
+                <button onclick="navigateToPage('physical-health.html')">Learn More</button>
+            </div>
+            <div class="resource">
+                <h3>Mental Health</h3>
+                <p>Explore tips and videos for better mental health.</p>
+                <button onclick="navigateToPage('mental-health.html')">Learn More</button>
+            </div>
+            <div class="resource">
+                <h3>Emotional Health</h3>
+                <p>Discover strategies to enhance your emotional wellbeing.</p>
+                <button onclick="navigateToPage('emotional-health.html')">Learn More</button>
+            </div>
+        </div>
+
+        <div id="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="data:image/jpeg;base64,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" alt="Thwala Lindelwa">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"Health Hub has transformed my approach to wellness!"</p>
+                        <p><strong>- Thwala Lindelwa</strong></p>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://th.bing.com/th?id=ORMS.abf9b905fb43f041b5b0b31f8c818eaa&pid=Wdp&w=268&h=140&qlt=90&c=1&rs=1&dpr=1&p=0" alt="Manqoba Mashego">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"I found amazing resources that have helped me greatly!"</p>
+                        <p><strong>- Manqoba Mashego</strong></p>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="data:image/jpeg;base64,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" alt="Ngomane Akhona">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"A fantastic platform for all things health-related!"</p>
+                        <p><strong>- Ngomane Akhona</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zigzag-section">
+            <div class="about" id="about">
+                <h2>About Us</h2>
+                <p>We are dedicated to providing the best resources for health and wellness. Our mission is to support individuals in their journey towards better health.</p>
+            </div>
+            <div class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, feel free to reach out!</p>
+                <button onclick="navigateToPage('contact.html')">Get in Touch</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Health Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll to section functionality
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Navigate to a different page
+        function navigateToPage(pageUrl) {
+            window.location.href = pageUrl; // Change this to the desired page
+        }
+    </script>
+
+</body>
+
+</html>
